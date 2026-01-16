@@ -2,6 +2,7 @@ import { createSubmitAction } from "../components/shared/createSubmitAction";
 import { Link, useNavigate } from "react-router";
 import { useAuth } from "../context";
 import { SubmitBtn } from "../components";
+import type { LoginActionState } from "../Schemas";
 const SignIn = () => {
   const { setIsLogIn } = useAuth();
   const navigate = useNavigate();
@@ -9,8 +10,9 @@ const SignIn = () => {
   const submitAction = createSubmitAction({
     url: "http://localhost:3001/api/auth/login",
     successMessage: "Anmeldung erfolgreich",
-    onSuccess: (data) => {
-      const token = data.token;
+    onSuccess: (data?: LoginActionState) => {
+      if (!data) return;
+      const token = data?.token;
       setIsLogIn(true);
       localStorage.setItem("token", JSON.stringify(token));
       navigate("/");

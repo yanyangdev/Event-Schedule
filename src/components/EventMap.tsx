@@ -31,8 +31,9 @@ const EventMap = ({ location, latitude, longitude }: EventMapProps) => {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={position} icon={markerIcon}></Marker>
-      <Popup>{location}</Popup>
+      <Marker position={position} icon={markerIcon}>
+        <Popup>{location}</Popup>
+      </Marker>
     </MapContainer>
   );
 };

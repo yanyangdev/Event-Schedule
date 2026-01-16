@@ -25,7 +25,16 @@ const EventDetail = () => {
         const { data, error, success } =
           FetchEventSchema.safeParse(fetchedData);
         if (!success) throw new Error(z.prettifyError(error));
-        setEvent(data.event);
+        const getEvent: Event = {
+          id: data.id,
+          title: data.title,
+          description: data.description,
+          date: data.date,
+          location: data.location,
+          latitude: data.latitude,
+          longitude: data.longitude,
+        };
+        setEvent(getEvent);
         return data;
       } catch (error: unknown) {
         if (error instanceof Error) {
@@ -38,12 +47,12 @@ const EventDetail = () => {
     fetchData();
   }, [id]);
 
-  console.log("event data", event);
+  // console.log("event data", event);
   if (!event) {
     return <div>Loading...</div>;
   }
   return (
-    <div className="card card-lg  bg-base-100 max-h-2/3 shadow-sm  transition-transform duration-200 hover:scale-105 hover:drop-shadow-[0_0_10px_gray]  border rounded-lg space-y-2 pt-2  max-w-2/3 mx-auto my-8">
+    <div className="card card-lg  bg-base-100 max-h-2/3 shadow-sm  transition-transform duration-200 hover:drop-shadow-[0_0_10px_gray]  border rounded-lg space-y-2 pt-2  max-w-2/3 mx-auto my-8">
       <div className="card-body px-0 py-0 space-y-2 items-center text-center  ">
         <h2 className="card-title border-b border-b-gray-300">{event.title}</h2>
 

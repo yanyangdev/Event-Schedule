@@ -1,8 +1,10 @@
 import { toast } from "react-toastify";
+import type { LoginActionState } from "../../Schemas";
+
 type Props = {
   url: string;
   successMessage: string;
-  onSuccess: (data?: any) => void;
+  onSuccess: (data?: LoginActionState) => void;
 };
 export const createSubmitAction = ({
   url,

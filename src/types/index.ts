@@ -6,7 +6,7 @@ export type AuthContextType = {
 };
 export type EventContextType = {
   events: Event[];
-  setEvents: (events: Event[]) => void;
+  setEvents: React.Dispatch<React.SetStateAction<Event[]>>;
   isLoading: boolean;
   error: boolean;
 };

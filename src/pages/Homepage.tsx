@@ -18,7 +18,7 @@ const Homepage = () => {
     return <div>Error fetching data</div>;
   }
   return (
-    <div className="grid min-h-full  gap-6  mx-0 my-16 text-gray-400 grid-cols-2 sm:grid-cols-[repeat(auto-fill,minmax(250px,1fr))]   auto-rows-min ">
+    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 p-4">
       {events.map((event) => {
         return <EventCard key={event.id} {...event} />;
       })}

@@ -32,7 +32,7 @@ const SignUp = () => {
             name="password"
             required
             placeholder="Password"
-            minLength="8"
+            minLength={8}
             title="Must be more than 8 characters"
           />
         </label>

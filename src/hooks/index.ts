@@ -1,1 +1,1 @@
-export { default as useEvents } from "./useEvents.jsx";
+export { default as useEvents } from "./useEvents";

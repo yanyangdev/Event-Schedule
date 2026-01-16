@@ -16,7 +16,7 @@ const EventCard = ({
   return (
     <div
       onClick={() => navigate(`/events/${id}`)}
-      className="card card-lg  bg-base-100 h-full shadow-sm  transition-transform duration-200 hover:scale-105 hover:drop-shadow-[0_0_10px_gray]  border rounded-lg space-y-2 pt-2 "
+      className="card h-80 bg-base-100 shadow-sm  transition-transform duration-200 hover:scale-105 hover:drop-shadow-[0_0_10px_gray]  border rounded-lg space-y-2 pt-2 "
     >
       <div className="card-body px-0 py-0 space-y-2 items-center text-center  ">
         <h2 className="card-title border-b border-b-gray-300 text-black">
